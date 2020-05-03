@@ -55,4 +55,4 @@ This simple website gives information about the company and allows sutomers to t
 [See website code here](https://github.com/musevarg/Transportation-Management-System/tree/master/API-and-Admin-Panel/App/App/Website).
 
 Below is an example of a parcel being tracked:
-![](https://www.sedhna.com/tps/scr4.png)
+![](https://www.sedhna.com/tps/scr5.png)
