@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.login.Login"
+    tools:showIn="@layout/activity_login"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/logo_blue"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Username:"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                />
+
+            <EditText
+                android:id="@+id/emailView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:maxLines="1"
+                android:inputType="text"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Password:"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                />
+
+            <EditText
+                android:id="@+id/passView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                />
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:layout_margin="30dp"/>
+
+            <TextView
+                android:id="@+id/errorMessageView"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textColor="#9b2700"
+                android:textSize="20sp"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

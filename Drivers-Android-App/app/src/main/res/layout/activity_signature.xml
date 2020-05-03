@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mark As Completed"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_margin="20dp"/>
+
+    <com.aquarian.drivers.ui.jobsActivity.CustomScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/signatureScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveParcelPic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Take Picture" />
+
+    <ImageView
+        android:id="@+id/picPreview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/border"
+        android:src="@drawable/picpreview"/>
+
+    <TextView
+        android:id="@+id/signatureTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Signature"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"/>
+
+        <LinearLayout
+            android:id="@+id/signatureLayout"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:orientation="vertical"
+            android:background="@drawable/border"
+            xmlns:android="http://schemas.android.com/apk/res/android" >
+        </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/completeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="Mark Complete" />
+
+        </LinearLayout>
+
+    </com.aquarian.drivers.ui.jobsActivity.CustomScrollView>
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Aquarian Drivers App.iml" filepath="$PROJECT_DIR$/../Aquarian Drivers App.iml" group="Aquarian Drivers App" />
+      <module fileurl="file://$PROJECT_DIR$/../AquarianDriversApp-Aquarian Drivers App.iml" filepath="$PROJECT_DIR$/../AquarianDriversApp-Aquarian Drivers App.iml" group="Aquarian Drivers App" />
+      <module fileurl="file://$PROJECT_DIR$/AquarianDriversApp-app.iml" filepath="$PROJECT_DIR$/AquarianDriversApp-app.iml" group="Aquarian Drivers App/app" />
+      <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="Aquarian Drivers App/app" />
+    </modules>
+  </component>
+</project>
