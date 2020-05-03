@@ -21,11 +21,10 @@ The API is written in *Python* and *SQL*.
 
 The API is used to fetch, update and remove content from the database. It returns JSON responses and handles GET, POST, PUT and DELETE methods.
 
-Below is a sample output for each request method:
-
-![](https://www.sedhna.com/tps/scr1.png)
-
 [See API code here](https://github.com/musevarg/Transportation-Management-System/blob/master/API-and-Admin-Panel/App/App/API/RestAPI.py).
+
+Below is a sample output for each request method:
+![](https://www.sedhna.com/tps/scr1.png)
 
 ### 2. Admin Panel
 
@@ -35,9 +34,9 @@ It is developed using *HTML*, *CSS*, *JavaScript* and *jQuery* to perform API ca
 
 It also contains a dashboard screen that allows for the admin to check the monthly revenue and the monthly fees (fuel, lunch, MOT).
 
-![](https://www.sedhna.com/tps/scr2.png)
-
 [See Admin Panel code here](https://github.com/musevarg/Transportation-Management-System/tree/master/API-and-Admin-Panel/App/App/AdminPanel).
+
+![](https://www.sedhna.com/tps/scr2.png)
 
 ### 3. Android Application
 
@@ -45,15 +44,15 @@ The API allows for users authentication and also provides content to the native 
 It allows for delivery drivers to log in and see what vehicle has been assigned to them, how many jobs have been assigned to them and allows them to mark a job as completed. This updates the status of the job in the database and uploads a picture of the parcel and the customer's signature.
 It also permits for uploading receipts. This content can be retrieved in the admin panel.
 
-![](https://www.sedhna.com/tps/scr3.png)
-
 [See Android App code here](https://github.com/musevarg/Transportation-Management-System/tree/master/Drivers-Android-App/app/src/main).
+
+![](https://www.sedhna.com/tps/scr3.png)
 
 ### 4. Customers Website
 
 This simple website gives information about the company and allows sutomers to track their parcel (the API is used for that).
 
+[See website code here](https://github.com/musevarg/Transportation-Management-System/tree/master/API-and-Admin-Panel/App/App/Website).
+
 Below is an example of a parcel being tracked:
 ![](https://www.sedhna.com/tps/scr4.png)
-
-[See website code here](https://github.com/musevarg/Transportation-Management-System/tree/master/API-and-Admin-Panel/App/App/Website).
