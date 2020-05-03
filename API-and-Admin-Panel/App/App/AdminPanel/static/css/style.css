@@ -1,0 +1,135 @@
+
+#container {
+    width:100%;
+    height: 100%;
+    margin:0 auto;
+}
+
+/* Sidebar */
+
+#sidebar {
+    float: left;
+    position: fixed;
+    width:250px;
+    height: 100%;
+    background-color: #184474;
+    min-height: fill-available;
+    z-index: 2;
+}
+
+#sidebar-elements
+{
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    top: 10px;
+}
+
+#header
+{
+	background-image: url('../images/logo-white.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 100%;
+    height: 0;
+    padding-top: 76.64%; /* (img-height / img-width * container-width) */
+}
+
+.badge
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#list button
+{
+	display: block;
+	width: 90%;
+	margin: auto;
+	margin-top: 15px;
+}
+
+#footer
+{
+	position: absolute;
+	width: 100%;
+	margin: auto;
+	bottom: 0;
+}
+
+/* Content */
+
+#content {
+	position: relative;
+    width: auto;
+    height: 100%;
+    z-index: 1;
+}
+
+.card-hover:hover {
+	background-color: rgb(236,236,236);
+}
+
+#content-wrapper{
+	overflow: hidden;
+}
+
+#pageContent{
+	width: auto;
+	height: 90%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#pageInnerContent{
+	display: block;
+	margin: auto;
+	width: 95%;
+	overflow: hidden;
+}
+
+.fade-scale {
+  transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  transition: all .25s linear;
+}
+
+.fade-scale.in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#changePasswordMessage
+{
+	display:block;
+	color: red;
+	width: 40%;
+	margin: auto;
+}
+
+footer{
+	display:block;
+	width:50%;
+	margin:auto;
+}
+
+footer div{
+	display:block;
+	width:15%;
+	margin:auto;
+}
+
+footer div div{
+	display:block;
+	width:90%;
+	margin:auto;
+}
+
+footer div h3{
+	cursor: pointer;
+	width: 90%;
+	margin: auto;
+	margin-left:8px;
+}

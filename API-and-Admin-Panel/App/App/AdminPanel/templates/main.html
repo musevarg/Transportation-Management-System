@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/animated.css">
+
+    <link href="./static/scripts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="./static/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="./static/scripts/jquery-2.2.3.min.js">    </script>
+    <script type="text/javascript" src="./static/scripts/popper.min.js">          </script>
+    <script type="text/javascript" src="./static/scripts/bootstrap.min.js">       </script>
+
+    <script src="./static/scripts/moment.min.js"></script>
+<link rel="stylesheet" href="./static/css/bootstrap-datetimepicker.min.css">
+<script src="./static/scripts/bootstrap-datetimepicker.min.js"></script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <div id="header"></div>
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="color:white;">
+        <div class="mx-3">Admin Panel</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li style="cursor:pointer;" class="nav-item active">
+        <a class="nav-link" href="main">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Tables
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li id="nav-jobs" style="cursor:pointer;" class="nav-item" onclick="newPage('jobs',10,0);">
+        <a class="nav-link">
+          <i class="fas fa-fw fa-box"></i>
+          <span>Jobs</span></a>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li id="nav-drivers" style="cursor:pointer;" class="nav-item" onclick="newPage('drivers',10,0);">
+        <a class="nav-link">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Drivers</span></a>
+      </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+      <li id="nav-vehicles" style="cursor:pointer;" class="nav-item" onclick="newPage('vehicles',10,0);">
+        <a class="nav-link">
+          <i class="fas fa-fw fa-truck"></i>
+          <span>Vehicles</span></a>
+      </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+      <li id="nav-customers" style="cursor:pointer;" class="nav-item" onclick="newPage('customers',10,0);">
+        <a class="nav-link">
+          <i class="fas fa-fw fa-user-friends"></i>
+          <span>Customers</span></a>
+      </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+      <li id="nav-locations" style="cursor:pointer;" class="nav-item" onclick="newPage('locations',10,0);">
+        <a class="nav-link">
+          <i class="fas fa-fw fa-location-arrow"></i>
+          <span>Locations</span></a>
+      </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+      <li id="nav-receipts" style="cursor:pointer;" class="nav-item" onclick="newPage('receipts',10,0);">
+        <a class="nav-link">
+          <i class="fas fa-fw fa-file-alt"></i>
+          <span>Receipts</span></a>
+      </li>
+
+     
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Page Header -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 id="pageHeader" style="margin-top:20px;margin-left:15px;" class="h3 mb-0 text-gray-800">Dashboard</h1>
+          </div>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user_name }}</span>
+                <img class="img-profile rounded-circle" src="./static/images/user.png">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#changePasswordModal">
+                  <i class="fas fa-key fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Change Password
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+
+ <!-- Begin Page Content -->
+        <div id="pageContent" >
+            <div id="pageInnerContent">
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-10 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Parcels Today</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">341</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-boxes fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-10 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Drivers Today</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-truck fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-10 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Completed</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                        </div>
+                        <div class="col">
+                          <div class="progress progress-sm mr-2">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Revenue and Costs</h6>
+                </div>
+                <div class="card-body">
+                  <div class="chart-bar" style="height:400px;">
+                    <canvas id="myBarChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4" style="height:500px;">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Work Share</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <div class="mt-4 text-center small">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-primary"></i> Steven
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> Duncan
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-info"></i> George
+                    </span>
+                  </div>
+                  <div class="mt-4 text-center"></div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+      </div>
+    </div>
+</div>
+  <!-- End of Page Wrapper -->
+
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-warning" href="./logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Change Password Modal-->
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                <label>Current password:</label>
+                <input type="password" class="form-control" id="oldPassword" />
+                <hr class="sidebar-divider d-none d-md-block">
+                <label>New password:</label>
+                <input type="password" class="form-control" id="newPassword1" />
+                <label>Confirm password:</label>
+                <input type="password" class="form-control" id="newPassword2" />
+                <br><p id="changePasswordMessage"></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a style="color:white;cursor:pointer;" class="btn btn-warning" onclick="changePassword();">Change Password</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modals"></div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="./static/scripts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="./static/scripts/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="./static/scripts/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="./static/scripts/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="./static/scripts/demo/chart-bar-demo.js"></script>
+  <script src="./static/scripts/demo/chart-pie-demo.js"></script>
+
+  <script type="text/javascript" src="./static/scripts/panel.js"></script>
+
+</body>
+
+</html>
