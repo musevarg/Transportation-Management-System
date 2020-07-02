@@ -24,7 +24,7 @@ The API is used to fetch, update and remove content from the database. It return
 [See API code here](https://github.com/musevarg/Transportation-Management-System/blob/master/API-and-Admin-Panel/App/App/API/RestAPI.py).
 
 Below is a sample output for each request method:
-![](https://www.sedhna.com/tps/scr1.png)
+![](https://raw.githubusercontent.com/musevarg/Transportation-Management-System/master/pic1.png)
 
 ### 2. Admin Panel
 
@@ -36,7 +36,7 @@ It also contains a dashboard screen that allows for the admin to check the month
 
 [See Admin Panel code here](https://github.com/musevarg/Transportation-Management-System/tree/master/API-and-Admin-Panel/App/App/AdminPanel).
 
-![](https://www.sedhna.com/tps/scr2.png)
+![](https://raw.githubusercontent.com/musevarg/Transportation-Management-System/master/pic2.png)
 
 ### 3. Android Application
 
@@ -46,7 +46,7 @@ It also permits for uploading receipts. This content can be retrieved in the adm
 
 [See Android App code here](https://github.com/musevarg/Transportation-Management-System/tree/master/Drivers-Android-App/app/src/main).
 
-![](https://www.sedhna.com/tps/scr3.png)
+![](https://raw.githubusercontent.com/musevarg/Transportation-Management-System/master/pic3.png)
 
 ### 4. Customers Website
 
@@ -55,4 +55,4 @@ This simple website gives information about the company and allows sutomers to t
 [See website code here](https://github.com/musevarg/Transportation-Management-System/tree/master/API-and-Admin-Panel/App/App/Website).
 
 Below is an example of a parcel being tracked:
-![](https://www.sedhna.com/tps/scr5.png)
+![](https://raw.githubusercontent.com/musevarg/Transportation-Management-System/master/pic4.png)
