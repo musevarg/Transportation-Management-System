@@ -583,9 +583,9 @@ class Zone(object):
             raise NoNS
 
 
-class _MasterReader(object):
+class _MainReader(object):
 
-    """Read a DNS master file
+    """Read a DNS main file
 
     @ivar tok: The tokenizer
     @type tok: dns.tokenizer.Tokenizer object
@@ -642,7 +642,7 @@ class _MasterReader(object):
                 break
 
     def _rr_line(self):
-        """Process one line from a DNS master file."""
+        """Process one line from a DNS main file."""
         # Name
         if self.current_origin is None:
             raise UnknownOrigin
@@ -775,7 +775,7 @@ class _MasterReader(object):
     def _generate_line(self):
         # range lhs [ttl] [class] type rhs [ comment ]
         """Process one line containing the GENERATE statement from a DNS
-        master file."""
+        main file."""
         if self.current_origin is None:
             raise UnknownOrigin
 
@@ -897,7 +897,7 @@ class _MasterReader(object):
             rds.add(rd, ttl)
 
     def read(self):
-        """Read a DNS master file and build a zone object.
+        """Read a DNS main file and build a zone object.
 
         @raises dns.zone.NoSOA: No SOA RR was found at the zone origin
         @raises dns.zone.NoNS: No NS RRset was found at the zone origin
@@ -969,7 +969,7 @@ class _MasterReader(object):
                         self._generate_line()
                     else:
                         raise dns.exception.SyntaxError(
-                            "Unknown master file directive '" + c + "'")
+                            "Unknown main file directive '" + c + "'")
                     continue
                 self.tok.unget(token)
                 self._rr_line()
@@ -988,12 +988,12 @@ class _MasterReader(object):
 def from_text(text, origin=None, rdclass=dns.rdataclass.IN,
               relativize=True, zone_factory=Zone, filename=None,
               allow_include=False, check_origin=True):
-    """Build a zone object from a master file format string.
+    """Build a zone object from a main file format string.
 
-    @param text: the master file format input
+    @param text: the main file format input
     @type text: string.
     @param origin: The origin of the zone; if not specified, the first
-    $ORIGIN statement in the master file will determine the origin of the
+    $ORIGIN statement in the main file will determine the origin of the
     zone.
     @type origin: dns.name.Name object or string
     @param rdclass: The zone's rdata class; the default is class IN.
@@ -1022,7 +1022,7 @@ def from_text(text, origin=None, rdclass=dns.rdataclass.IN,
     if filename is None:
         filename = '<string>'
     tok = dns.tokenizer.Tokenizer(text, filename)
-    reader = _MasterReader(tok, origin, rdclass, relativize, zone_factory,
+    reader = _MainReader(tok, origin, rdclass, relativize, zone_factory,
                            allow_include=allow_include,
                            check_origin=check_origin)
     reader.read()
@@ -1032,12 +1032,12 @@ def from_text(text, origin=None, rdclass=dns.rdataclass.IN,
 def from_file(f, origin=None, rdclass=dns.rdataclass.IN,
               relativize=True, zone_factory=Zone, filename=None,
               allow_include=True, check_origin=True):
-    """Read a master file and build a zone object.
+    """Read a main file and build a zone object.
 
     @param f: file or string.  If I{f} is a string, it is treated
     as the name of a file to open.
     @param origin: The origin of the zone; if not specified, the first
-    $ORIGIN statement in the master file will determine the origin of the
+    $ORIGIN statement in the main file will determine the origin of the
     zone.
     @type origin: dns.name.Name object or string
     @param rdclass: The zone's rdata class; the default is class IN.
