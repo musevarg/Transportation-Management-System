@@ -52,7 +52,7 @@
         </provider>
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyCKfzrRm8UtGzJo9Z-ek0gX4l2eeRtfzUk"/>
+            android:value="insert google maps api key here"/>
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
 
