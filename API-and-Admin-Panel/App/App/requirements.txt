@@ -16,7 +16,7 @@ Jinja2==2.11.3
 lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
 mccabe==0.6.1
-mod-wsgi==4.7.1
+mod-wsgi==4.9.3
 mod-wsgi-httpd==2.4.41.1
 mysqlclient==1.4.6
 pylint==2.4.3
