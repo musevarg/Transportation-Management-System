@@ -1,6 +1,6 @@
 appdirs==1.4.3
 astroid==2.3.2
-certifi==2019.9.11
+certifi==2023.7.22
 Click==7.0
 distlib==0.3.0
 filelock==3.0.12
