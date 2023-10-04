@@ -87,7 +87,7 @@ class RRset(dns.rdataset.Rdataset):
         return True
 
     def to_text(self, origin=None, relativize=True, **kw):
-        """Convert the RRset into DNS master file format.
+        """Convert the RRset into DNS main file format.
 
         See ``dns.name.Name.choose_relativity`` for more information
         on how *origin* and *relativize* determine the way names
