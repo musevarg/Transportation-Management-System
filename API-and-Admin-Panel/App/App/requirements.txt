@@ -23,6 +23,6 @@ pylint==2.4.3
 PyMySQL==0.9.3
 six==1.12.0
 virtualenv==20.0.7
-Werkzeug==2.2.3
+Werkzeug==3.0.3
 wrapt==1.11.2
 WTForms==2.2.1
